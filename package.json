@@ -1,0 +1,21 @@
+{
+  "name": "nireez-al-sweidan-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Portfolio of Nireez Al Sweidan — Full Stack Web Developer",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "build:preview": "esbuild temp/build-preview.js --bundle --format=cjs --platform=node --outfile=temp/build-preview.bundle.cjs --jsx=automatic --loader:.jsx=jsx && node temp/build-preview.bundle.cjs"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^6.0.7"
+  }
+}

@@ -1,0 +1,168 @@
+.experience {
+  background: var(--bg);
+}
+
+.experience-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.experience-orbit {
+  position: absolute;
+  right: 5%;
+  top: 6%;
+  width: 84px;
+  opacity: 0.6;
+}
+
+.experience-sparkle {
+  position: absolute;
+  left: 6%;
+  bottom: 10%;
+  width: 40px;
+}
+
+.experience-list {
+  position: relative;
+  max-width: 860px;
+  margin-inline: auto;
+}
+
+.experience-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 1.2rem;
+  padding-bottom: 2.2rem;
+}
+
+.experience-rail {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.experience-rail::after {
+  content: "";
+  position: absolute;
+  top: 26px;
+  bottom: -8px;
+  width: 2px;
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--line-strong) 0,
+    var(--line-strong) 6px,
+    transparent 6px,
+    transparent 12px
+  );
+}
+
+.experience-item:last-child .experience-rail::after {
+  display: none;
+}
+
+.experience-rail-dot {
+  position: relative;
+  z-index: 1;
+  width: 18px;
+  height: 18px;
+  margin-top: 6px;
+  border-radius: 50%;
+  border: 3px solid var(--bg);
+  box-shadow: 0 3px 8px rgba(34, 27, 19, 0.22);
+}
+
+.experience-current-ring {
+  position: absolute;
+  inset: -7px;
+  border-radius: 50%;
+  border: 1.5px solid var(--coral);
+  animation: pulse-ring 2.2s ease-out infinite;
+}
+
+.experience-body {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 1.5rem 1.7rem;
+  transition: transform 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out),
+    border-color 0.4s var(--ease-out);
+}
+
+.experience-item:hover .experience-body {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--line-strong);
+}
+
+.experience-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.experience-company {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.experience-role {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.3rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
+.experience-current-tag {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--coral-deep);
+  background: var(--coral-pale);
+  border: 1px solid rgba(184, 74, 49, 0.3);
+  padding: 0.14rem 0.55rem;
+  border-radius: 999px;
+}
+
+.experience-period {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--ink-faint);
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  padding: 0.32rem 0.8rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.experience-desc {
+  margin-top: 0.8rem;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  max-width: 62ch;
+}
+
+@media (max-width: 560px) {
+  .experience-item {
+    grid-template-columns: 26px 1fr;
+    gap: 0.8rem;
+  }
+
+  .experience-head {
+    flex-direction: column;
+  }
+
+  .experience-period {
+    align-self: flex-start;
+  }
+}

@@ -1,0 +1,124 @@
+.hireme {
+  background: var(--bg-tint);
+  padding-block: calc(var(--section-pad) + 40px);
+}
+
+.hireme-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hireme-arrow {
+  position: absolute;
+  top: 12%;
+  left: 4%;
+  width: 80px;
+  opacity: 0.6;
+}
+
+.hireme-sparkle {
+  position: absolute;
+  right: 6%;
+  top: 18%;
+  width: 40px;
+}
+
+.hireme-star {
+  position: absolute;
+  right: 12%;
+  bottom: 14%;
+  width: 24px;
+}
+
+.hireme-head {
+  max-width: 640px;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.hireme-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  align-items: stretch;
+}
+
+.hireme-card-wrap {
+  height: 100%;
+}
+
+.hireme-card {
+  position: relative;
+  height: 100%;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 1.7rem 1.6rem;
+  overflow: hidden;
+  transition: transform 0.45s var(--ease-out), box-shadow 0.45s var(--ease-out),
+    border-color 0.45s var(--ease-out);
+}
+
+.hireme-card-wrap-1 .hireme-card {
+  transform: rotate(-0.7deg);
+}
+
+.hireme-card-wrap-2 .hireme-card {
+  transform: rotate(0.6deg);
+}
+
+.hireme-card-wrap-3 .hireme-card {
+  transform: rotate(-0.4deg);
+}
+
+.hireme-card:hover {
+  transform: rotate(0deg) translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--line-strong);
+}
+
+.hireme-card-num {
+  position: absolute;
+  top: 1rem;
+  right: 1.2rem;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.7rem;
+  opacity: 0.85;
+}
+
+.hireme-card-bar {
+  display: block;
+  width: 42px;
+  height: 5px;
+  border-radius: 3px;
+  margin-bottom: 1.1rem;
+}
+
+.hireme-card-title {
+  font-family: var(--font-display);
+  font-size: 1.22rem;
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 0.6rem;
+}
+
+.hireme-card-text {
+  font-size: 0.93rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+}
+
+@media (max-width: 900px) {
+  .hireme-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .hireme-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,234 @@
+.about {
+  background: var(--bg);
+}
+
+.about-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.about-dots {
+  position: absolute;
+  top: 4rem;
+  right: 4%;
+  width: 120px;
+  opacity: 0.45;
+}
+
+.about-blob {
+  position: absolute;
+  left: -7%;
+  bottom: 8%;
+  width: 300px;
+  opacity: 0.5;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: clamp(2.5rem, 5vw, 5rem);
+  align-items: start;
+}
+
+.about-copy {
+  font-size: clamp(1.02rem, 1.3vw, 1.12rem);
+  line-height: 1.75;
+}
+
+.about-lead {
+  color: var(--ink);
+  font-size: clamp(1.06rem, 1.5vw, 1.22rem);
+  line-height: 1.78;
+}
+
+.about-dropcap {
+  float: left;
+  font-family: var(--font-display);
+  font-size: 3.4em;
+  font-weight: 600;
+  line-height: 0.85;
+  padding-right: 0.12em;
+  margin-top: 0.05em;
+  color: var(--coral-deep);
+}
+
+.about-block {
+  margin-top: 2rem;
+  padding: 1.6rem 1.7rem;
+  background: var(--bg-tint);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--teal);
+  border-radius: var(--radius-md);
+}
+
+.about-block-ai {
+  border-left-color: var(--sand);
+  background: var(--bg-soft);
+}
+
+.about-subhead {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--font-display);
+  font-size: 1.22rem;
+  font-weight: 600;
+  margin-bottom: 0.55rem;
+}
+
+.about-subhead-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.about-block p {
+  color: var(--ink-soft);
+  font-size: 0.98rem;
+  line-height: 1.75;
+}
+
+.about-card {
+  position: relative;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: 1.8rem;
+  transform: rotate(1.2deg);
+  transition: transform 0.45s var(--ease-out);
+}
+
+.about-card:hover {
+  transform: rotate(0deg) translateY(-4px);
+}
+
+.about-card::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border: 1.5px dashed var(--line-strong);
+  border-radius: calc(var(--radius-lg) + 8px);
+  pointer-events: none;
+}
+
+.about-card-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.about-monogram {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  flex-shrink: 0;
+  border-radius: 18px;
+  background: linear-gradient(135deg, var(--coral), #f4a261);
+  color: var(--bg);
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 600;
+  box-shadow: 0 10px 22px rgba(231, 111, 81, 0.35);
+}
+
+.about-card-kicker {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--coral-deep);
+  margin-bottom: 0.25rem;
+}
+
+.about-card-name {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.about-card-title p {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  margin-top: 0.2rem;
+}
+
+.about-card-arrow {
+  margin-left: auto;
+  width: 54px;
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+
+.about-facts {
+  margin-top: 1.6rem;
+  border-top: 1px solid var(--line);
+}
+
+.about-fact {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px dashed var(--line);
+  font-size: 0.9rem;
+}
+
+.about-fact-label {
+  color: var(--ink-faint);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.about-fact-value {
+  font-weight: 600;
+  text-align: right;
+}
+
+.about-card-note {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 1.4rem;
+}
+
+.about-note-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+}
+
+.pulse-dot {
+  background: var(--teal);
+  box-shadow: 0 0 0 0 rgba(42, 157, 143, 0.55);
+  animation: pulse-ring 2.2s ease-out infinite;
+}
+
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgba(42, 157, 143, 0.55);
+  }
+  70% {
+    box-shadow: 0 0 0 9px rgba(42, 157, 143, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(42, 157, 143, 0);
+  }
+}
+
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-card {
+    max-width: 520px;
+  }
+}
