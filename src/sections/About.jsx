@@ -79,7 +79,7 @@ export default function About() {
               </div>
 
               <ul className="about-facts">
-                <Fact label="Basis" value="Beirut, Lebanon" />
+                <Fact label="Basis" value="Tripoli, Lebanon" />
                 <Fact label="Degree" value="B.S. Computer Science" />
                 <Fact label="Scholarship" value="USAID Scholar" />
                 <Fact label="Focus" value="Full Stack · AI" />

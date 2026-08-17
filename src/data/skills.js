@@ -44,7 +44,6 @@ export const skills = [
       'Git & version control',
       'Clear communication',
       'Adapting to feedback',
-      'Proactive collaboration',
       'Team-oriented mindset',
     ],
   },

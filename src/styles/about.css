@@ -96,7 +96,6 @@
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
   padding: 1.8rem;
-  transform: rotate(1.2deg);
   transition: transform 0.45s var(--ease-out);
 }
 
