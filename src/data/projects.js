@@ -18,6 +18,7 @@ export const projects = [
     featured: true,
     palette: ['#E76F51', '#F4A261', '#FBF7F1'],
     mock: 'pos',
+    image: '/images/storeflow.png'
   },
   {
     id: 'lobby',
@@ -98,5 +99,41 @@ export const projects = [
     featured: false,
     palette: ['#E9C46A', '#E76F51', '#FBF7F1'],
     mock: 'house',
+  },
+  {
+    id: 'blogplatform',
+    title: 'Blog Platform',
+    subtitle: 'Web Programming Project',
+    description:
+      'A full-featured blogging platform built with user registration, authentication, content management tools, and rich text editing support.',
+    features: [
+      'User registration & auth',
+      'Content management system',
+      'Rich text formatting',
+      'Post creation & editing',
+    ],
+    technologies: ['JavaScript', 'PHP', 'phpMyAdmin', 'HTML/CSS'],
+    github: null,
+    featured: false,
+    palette: ['#3A86EF', '#8338EC', '#FBF7F1'],
+    mock: 'blog',
+  },
+  {
+    id: 'flowershop',
+    title: 'Flower Shop App',
+    subtitle: 'Mobile Application Project',
+    description:
+      'A mobile application engineered for an online flower store featuring an interactive product catalog, streamlined checkout ordering, and user profiles.',
+    features: [
+      'Product catalog browsing',
+      'Order placement system',
+      'User account management',
+      'Mobile-optimized UX',
+    ],
+    technologies: ['Java', 'XML', 'phpMyAdmin', 'PHP'],
+    github: null,
+    featured: false,
+    palette: ['#FF006E', '#FB5607', '#FBF7F1'],
+    mock: 'catalog',
   },
 ];

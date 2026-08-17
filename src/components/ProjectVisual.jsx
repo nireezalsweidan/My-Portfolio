@@ -116,12 +116,139 @@ function HouseMock({ palette }) {
   );
 }
 
+// ProjectVisual.jsx
+
+// (Add this near your other mock components: DashboardMock, BookingMock, etc.)
+
+function LobbyMock({ palette }) {
+  const accent1 = palette[0]; // E76F51 (Coral)
+  const accent2 = palette[1]; // F4A261 (Orange)
+
+  // Dummy chat messages (left/right alignment)
+  const messages = [
+    { side: 'left', opacity: 1, c: '#E9E3D8' },
+    { side: 'right', opacity: 1, c: accent1 },
+    { side: 'left', opacity: 0.8, c: '#E9E3D8' },
+    { side: 'right', opacity: 0.6, c: accent2 },
+  ];
+
+  return (
+    <div className="pv-body pv-lobby" aria-hidden="true">
+      {/* Sidebar: Servers & Connected Users */}
+      <div className="pv-sidebar">
+        <span className="pv-logo" style={{ background: accent1 }} />
+        {/* 'Connect' Indicator */}
+        <span className="pv-side-item" style={{ background: accent1, height: '14px' }} />
+        {[0, 1, 2].map((n) => (
+          <span
+            key={n}
+            className="pv-side-item"
+            style={{ opacity: 1 - (n + 1) * 0.2, height: '8px' }}
+          />
+        ))}
+      </div>
+
+      {/* Main Area: Chat & Status */}
+      <div className="pv-main pv-lobby-main">
+        {/* Top Status Bar: Audio, Users, Guest Link */}
+        <div className="pv-stat-row pv-lobby-status">
+          <div className="pv-lobby-indicators">
+            {/* Audio Call indicator (glowing) */}
+            <span className="pv-status-indicator" style={{ background: '#2A9D8F' }} />
+            {/* Scren Share indicator */}
+            <span className="pv-status-indicator" style={{ background: '#4F46E5' }} />
+          </div>
+          {/* Faked connected user dots */}
+          <div className="pv-lobby-users">
+            <b style={{ background: accent1 }} />
+            <b style={{ background: accent2 }} />
+            <b style={{ background: '#9C8E7C' }} />
+          </div>
+          {/* Guest Link placeholder */}
+          <span className="pv-lobby-link" />
+        </div>
+
+        {/* The "WaveMock" section, repurposed to show active audio streams */}
+        <div className="pv-lobby-audio">
+          {/* Active Speaker (Coral) */}
+          <WaveMock palette={[accent1, '#E9E3D8', '#E9E3D8']} waveform={false} />
+        </div>
+
+        {/* The Chat Input area (Faked messages) */}
+        <div className="pv-lobby-chat">
+          {messages.map((msg, i) => (
+            <div key={i} className={`pv-msg-wrap pv-msg-${msg.side}`}>
+              <i style={{ background: msg.side === 'left' ? '#9C8E7C' : accent1 }} />
+              <b style={{ background: msg.c, opacity: msg.opacity }} />
+            </div>
+          ))}
+          <div className="pv-chat-input" />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function BlogMock({ palette }) {
+  return (
+    <div className="pv-body pv-blog" aria-hidden="true">
+      <div className="pv-blog-feature">
+        <span className="pv-blog-thumb" style={{ background: palette[0] }} />
+        <span className="pv-blog-feature-title" />
+        <span className="pv-blog-feature-line" />
+      </div>
+      <div className="pv-blog-list">
+        {[0, 1, 2].map((n) => (
+          <div key={n} className="pv-blog-row">
+            <span
+              className="pv-blog-row-thumb"
+              style={{ background: n === 0 ? palette[1] : n === 1 ? palette[0] : palette[2] }}
+            />
+            <div className="pv-blog-row-lines">
+              <span className="pv-blog-row-title" />
+              <span className="pv-blog-row-meta" />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function CatalogMock({ palette }) {
+  return (
+    <div className="pv-body pv-catalog" aria-hidden="true">
+      <div className="pv-catalog-grid">
+        {[0, 1, 2, 3].map((n) => (
+          <div key={n} className="pv-catalog-item">
+            <span
+              className="pv-catalog-thumb"
+              style={{ background: n % 2 === 0 ? palette[0] : palette[1] }}
+            />
+            <span className="pv-catalog-name" />
+            <span className="pv-catalog-price" style={{ color: palette[0] }}>
+              $--
+            </span>
+          </div>
+        ))}
+      </div>
+      <div className="pv-catalog-cart">
+        <span className="pv-catalog-cart-icon" style={{ background: palette[0] }} />
+        <span className="pv-catalog-cart-line" />
+      </div>
+    </div>
+  );
+}
+
 const mocks = {
   pos: DashboardMock,
   booking: BookingMock,
   audio: WaveMock,
   house: HouseMock,
   clinic: BookingMock,
+  lobby: LobbyMock,
+  blog: BlogMock,
+  catalog: CatalogMock,
 };
 
 export default function ProjectVisual({ project, className = '' }) {
@@ -139,7 +266,11 @@ export default function ProjectVisual({ project, className = '' }) {
         </span>
         <span className="pv-dot" style={{ background: pal[0] }} />
       </div>
-      <Mock palette={pal} />
+      {project.image ? (
+        <img src={project.image} alt={`${project.title} preview`} className="pv-image" loading="lazy" />
+      ) : (
+        <Mock palette={pal} />
+      )}
     </div>
   );
 }
@@ -159,38 +290,42 @@ export function FeaturedVisual({ project }) {
           StoreFlow — Point of Sale
         </span>
       </div>
-      <div className="pv-featured-body">
-        <div className="pv-featured-side">
-          <span className="pv-featured-side-logo" style={{ color: project.palette[0] }}>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <rect x="4" y="4" width="16" height="16" rx="3" />
-              <path d="M4 9h16M9 4v16" />
-            </svg>
-          </span>
-          <span className="pv-featured-side-item" style={{ background: project.palette[0] }} />
-          <span className="pv-featured-side-item" style={{ background: project.palette[1] }} />
-          <span className="pv-featured-side-item" style={{ background: 'var(--line-strong)' }} />
-          <span className="pv-featured-side-item" style={{ background: 'var(--line-strong)' }} />
+      {project.image ? (
+        <img src={project.image} alt={`${project.title} preview`} className="pv-featured-image" loading="lazy" />
+      ) : (
+        <div className="pv-featured-body">
+          <div className="pv-featured-side">
+            <span className="pv-featured-side-logo" style={{ color: project.palette[0] }}>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <rect x="4" y="4" width="16" height="16" rx="3" />
+                <path d="M4 9h16M9 4v16" />
+              </svg>
+            </span>
+            <span className="pv-featured-side-item" style={{ background: project.palette[0] }} />
+            <span className="pv-featured-side-item" style={{ background: project.palette[1] }} />
+            <span className="pv-featured-side-item" style={{ background: 'var(--line-strong)' }} />
+            <span className="pv-featured-side-item" style={{ background: 'var(--line-strong)' }} />
+          </div>
+          <div className="pv-featured-main">
+            <div className="pv-fcard" style={{ borderColor: 'rgba(231,111,81,0.4)' }}>
+              <span className="pv-fcard-head" style={{ background: project.palette[0] }} />
+              <span className="pv-frow" />
+              <span className="pv-frow" />
+              <span className="pv-frow" style={{ width: '60%' }} />
+            </div>
+            <div className="pv-fcard" style={{ borderColor: 'rgba(244,162,97,0.45)' }}>
+              <span className="pv-fcard-head" style={{ background: project.palette[1] }} />
+              <span className="pv-frow" />
+              <span className="pv-frow" />
+              <span className="pv-frow" style={{ width: '75%' }} />
+            </div>
+            <div className="pv-fcard pv-fcard-wide">
+              <span className="pv-fcard-head" style={{ background: project.palette[2] }} />
+              <Bars palette={project.palette} bars={[40, 65, 50, 80, 60]} />
+            </div>
+          </div>
         </div>
-        <div className="pv-featured-main">
-          <div className="pv-fcard" style={{ borderColor: 'rgba(231,111,81,0.4)' }}>
-            <span className="pv-fcard-head" style={{ background: project.palette[0] }} />
-            <span className="pv-frow" />
-            <span className="pv-frow" />
-            <span className="pv-frow" style={{ width: '60%' }} />
-          </div>
-          <div className="pv-fcard" style={{ borderColor: 'rgba(244,162,97,0.45)' }}>
-            <span className="pv-fcard-head" style={{ background: project.palette[1] }} />
-            <span className="pv-frow" />
-            <span className="pv-frow" />
-            <span className="pv-frow" style={{ width: '75%' }} />
-          </div>
-          <div className="pv-fcard pv-fcard-wide">
-            <span className="pv-fcard-head" style={{ background: project.palette[2] }} />
-            <Bars palette={project.palette} bars={[40, 65, 50, 80, 60]} />
-          </div>
-        </div>
-      </div>
+      )}
       <div className="pv-featured-status">
         <span className="pv-status-dot" style={{ background: '#2A9D8F' }} />
         <span>system online · demo ready</span>

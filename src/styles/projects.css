@@ -123,10 +123,15 @@
 }
 
 .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-  align-items: start;
+  columns: 2;
+  column-gap: 1.5rem;
+}
+
+.project-reveal {
+  display: block;
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  margin-bottom: 1.5rem;
 }
 
 .project-card {
@@ -525,6 +530,156 @@
   height: 55%;
 }
 
+.pv-image {
+  display: block;
+  width: 100%;
+  height: 168px;
+  object-fit: cover;
+}
+
+.pv-blog {
+  flex-direction: column;
+}
+
+.pv-blog-feature {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0.6rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+}
+
+.pv-blog-thumb {
+  height: 46px;
+  border-radius: 6px;
+  opacity: 0.85;
+}
+
+.pv-blog-feature-title {
+  height: 10px;
+  width: 70%;
+  border-radius: 4px;
+  background: var(--bg-soft);
+}
+
+.pv-blog-feature-line {
+  height: 7px;
+  width: 90%;
+  border-radius: 4px;
+  background: var(--bg-soft);
+}
+
+.pv-blog-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.pv-blog-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.4rem 0.5rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.pv-blog-row-thumb {
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+
+.pv-blog-row-lines {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.pv-blog-row-title {
+  height: 8px;
+  width: 80%;
+  border-radius: 3px;
+  background: var(--bg-soft);
+}
+
+.pv-blog-row-meta {
+  height: 6px;
+  width: 40%;
+  border-radius: 3px;
+  background: var(--bg-soft);
+}
+
+.pv-catalog {
+  flex-direction: column;
+}
+
+.pv-catalog-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+.pv-catalog-item {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.45rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  background: #fff;
+}
+
+.pv-catalog-thumb {
+  height: 44px;
+  border-radius: 6px;
+  opacity: 0.85;
+}
+
+.pv-catalog-name {
+  height: 7px;
+  width: 70%;
+  border-radius: 3px;
+  background: var(--bg-soft);
+}
+
+.pv-catalog-price {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+}
+
+.pv-catalog-cart {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.6rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+}
+
+.pv-catalog-cart-icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 5px;
+}
+
+.pv-catalog-cart-line {
+  flex: 1;
+  height: 8px;
+  border-radius: 4px;
+  background: var(--bg-soft);
+}
+
 .pv-featured {
   border: 1.5px solid var(--line);
   border-radius: 22px;
@@ -578,6 +733,13 @@
   gap: 0.9rem;
   padding: 0.9rem;
   min-height: 300px;
+}
+
+.pv-featured-image {
+  display: block;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
 }
 
 .pv-featured-side {
@@ -676,7 +838,7 @@
   }
 
   .projects-grid {
-    grid-template-columns: 1fr;
+    columns: 1;
   }
 }
 
@@ -687,6 +849,10 @@
 
   .pv-featured-body {
     min-height: 220px;
+  }
+
+  .pv-featured-image {
+    height: 220px;
   }
 
   .pv-featured-main {
@@ -700,4 +866,123 @@
   .pv-sidebar {
     display: none;
   }
+}
+
+/* ProjectVisual.css - Additions for Lobby */
+
+.pv-lobby {
+  display: flex;
+}
+
+.pv-lobby-main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding-right: 1.2rem;
+}
+
+/* The horizontal status row (indicators, users, link) */
+.pv-lobby-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  height: 24px;
+}
+
+.pv-lobby-indicators {
+  display: flex;
+  gap: 6px;
+}
+
+.pv-status-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  box-shadow: 0 0 5px currentColor; /* Dynamic glow */
+}
+
+.pv-lobby-users {
+  display: flex;
+  gap: -4px; /* Stacked look */
+}
+
+.pv-lobby-users b {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1.5px solid var(--card); /* Border helps them pop */
+  display: block;
+}
+
+.pv-lobby-link {
+  flex-grow: 1;
+  height: 12px;
+  background: var(--line-strong);
+  border-radius: 4px;
+  max-width: 120px;
+}
+
+/* Audio visualizer area */
+.pv-lobby-audio {
+  height: 40px; /* Shortened, active-only display */
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 8px;
+  overflow: hidden;
+}
+
+/* WaveMock used inside Lobby. Set height: 100% inside container. */
+.pv-lobby-audio .pv-wave {
+  height: 100%;
+}
+
+/* The Chat Feed */
+.pv-lobby-chat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding-bottom: 0.5rem;
+}
+
+.pv-msg-wrap {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.pv-msg-wrap i {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.pv-msg-wrap b {
+  height: 14px;
+  border-radius: 6px;
+  width: 70%;
+}
+
+.pv-msg-left {
+  justify-content: flex-start;
+}
+.pv-msg-left b {
+  border-bottom-left-radius: 2px;
+}
+
+.pv-msg-right {
+  justify-content: flex-end;
+  flex-direction: row-reverse;
+}
+.pv-msg-right b {
+  border-bottom-right-radius: 2px;
+}
+
+.pv-chat-input {
+  margin-top: 10px;
+  height: 18px;
+  border: 1.5px solid var(--line);
+  border-radius: 6px;
+  background: var(--card);
 }
