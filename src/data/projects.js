@@ -62,6 +62,43 @@ export const projects = [
     mock: 'booking',
   },
   {
+    id: 'user-management-api',
+
+    title: 'User Management API',
+
+    subtitle: 'Secure user management REST API',
+
+    description:
+      'A secure RESTful User Management API built with FastAPI and MongoDB. It provides user registration, JWT authentication, role-based access control, profile management, admin user management, soft deletion, and public user statistics.',
+
+    features: [
+      'JWT authentication & authorization',
+      'Client & admin role management',
+      'User registration & login',
+      'Profile management',
+      'Admin user management',
+      'Pagination, filtering & searching',
+      'Soft deletion',
+      'Public user statistics',
+    ],
+
+    technologies: [
+      'FastAPI',
+      'Python',
+      'MongoDB',
+      'JWT',
+      'Pydantic',
+    ],
+
+    github: 'https://github.com/nireezalsweidan/Authentication-and-User-Management-System',
+
+    featured: false,
+
+    palette: ['#4F46E5', '#818CF8', '#F5F3FF'],
+
+    mock: 'user-management-api',
+  },
+  {
     id: 'polyclinic',
     title: 'Polyclinic Management System',
     subtitle: 'Software Engineering Project',
