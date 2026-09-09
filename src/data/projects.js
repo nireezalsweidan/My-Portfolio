@@ -36,7 +36,7 @@ export const projects = [
 
     github: 'https://github.com/nireezalsweidan/Construction-Project-Management-Accounting-System',
 
-    featured: true,
+    featured: false,
 
     palette: ['#08736C', '#F4A261', '#F5F1E8'],
 
@@ -58,7 +58,7 @@ export const projects = [
     ],
     technologies: ['React', 'TypeScript', 'Node.js', 'Express.js', 'MongoDB', 'JWT', 'Gmail API'],
     github: 'https://github.com/nireezalsweidan/StoreFlow',
-    featured: false,
+    featured: true,
     palette: ['#E76F51', '#F4A261', '#FBF7F1'],
     mock: 'pos',
     image: '/images/storeflow.png'
