@@ -1,4 +1,47 @@
 export const projects = [
+    {
+    id: 'cedar-control',
+    title: 'Cedar Control',
+    subtitle: 'Construction Project Management & Accounting System',
+    description:
+      'A full-stack construction management and accounting system designed to centralize project operations, financial management, procurement, inventory, workforce, and client information in one platform. The system connects construction workflows so that activities such as purchasing, receiving goods, inventory movements, project costs, employee assignments, invoicing, and payments can be tracked consistently across projects.',
+
+    features: [
+      'Construction project management',
+      'Project budgets & cost tracking',
+      'Procurement & purchase orders',
+      'Goods receiving & inventory management',
+      'Automatic stock movement tracking',
+      'Workforce & employee management',
+      'Employee project & phase assignments',
+      'Client management',
+      'Supplier & contractor management',
+      'Client & supplier invoicing',
+      'Payment & outstanding balance tracking',
+      'Project phases & status workflows',
+      'Role-based access control',
+      'Document & project record management',
+    ],
+
+    technologies: [
+      'Django',
+      'Django REST Framework',
+      'Python',
+      'JavaScript',
+      'HTML/CSS',
+      'PostgreSQL',
+      'REST APIs',
+      'JWT Authentication',
+    ],
+
+    github: 'https://github.com/nireezalsweidan/Construction-Project-Management-Accounting-System',
+
+    featured: true,
+
+    palette: ['#08736C', '#F4A261', '#F5F1E8'],
+
+    mock: 'construction',
+  },
   {
     id: 'storeflow',
     title: 'StoreFlow',
@@ -15,7 +58,7 @@ export const projects = [
     ],
     technologies: ['React', 'TypeScript', 'Node.js', 'Express.js', 'MongoDB', 'JWT', 'Gmail API'],
     github: 'https://github.com/nireezalsweidan/StoreFlow',
-    featured: true,
+    featured: false,
     palette: ['#E76F51', '#F4A261', '#FBF7F1'],
     mock: 'pos',
     image: '/images/storeflow.png'
