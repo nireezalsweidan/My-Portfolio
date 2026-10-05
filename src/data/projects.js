@@ -122,6 +122,7 @@ export const projects = [
     featured: false,
     palette: ['#E76F51', '#F4A261', '#FBF7F1'],
     mock: 'lobby',
+    image: '/images/lobby.png'
   },
   {
     id: 'fitconnect',
