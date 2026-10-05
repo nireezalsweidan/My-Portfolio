@@ -1,5 +1,45 @@
 export const projects = [
     {
+      id: 'bloom',
+      title: 'Bloom',
+      subtitle: 'AI-Powered Online Flower Shop & Bouquet Designer',
+      description:
+        'A full-stack e-commerce flower shop that combines traditional online shopping with bouquet personalization. Customers can browse a real product catalog, hand-build a custom bouquet stem-by-stem in an interactive studio, or describe an occasion and let an AI recommendation engine suggest a bouquet validated against real in-stock inventory before it ever reaches checkout.',
+
+      features: [
+        'Product catalog with category/tag/price filtering',
+        'Manual bouquet designer with live price preview',
+        'AI bouquet recommendation engine (Gemini)',
+        'AI-generated bouquet preview imagery',
+        'Catalog-validated AI output (no hallucinated products)',
+        'Persistent shopping cart with price locking',
+        'Checkout with cash & credit card payment methods',
+        'Order history, reorder, and confirmation flow',
+        'Role-based access control (customer/admin)',
+        'Django admin panel for catalog & order management',
+      ],
+
+      technologies: [
+        'Django',
+        'Python',
+        'Tailwind CSS',
+        'JavaScript',
+        'SQLite',
+        'Google Gemini API',
+        'Django ORM',
+        'Hugging Face Inference API',
+      ],
+
+      github: "https://github.com/nireezalsweidan/Bloom",
+
+      featured: false,
+
+      palette: ['#042217', '#476556', '#F4EFEA'],
+      image: '/images/bloom.png',
+
+      mock: 'flowershop-ai',
+    },
+    {
     id: 'cedar-control',
     title: 'Cedar Control',
     subtitle: 'Construction Project Management & Accounting System',
