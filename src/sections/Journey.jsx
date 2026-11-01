@@ -61,7 +61,7 @@ export default function Journey() {
         <SectionTitle
           kicker="02 · My Journey"
           title="Milestones & Journey"
-          sub="From software engineering fundamentals at LAU to building full-stack applications and AI models."
+          sub="From software engineering fundamentals at LAU to building full-stack applications and AI models, now pursuing a Master’s in Computer Science at UCLouvain in Belgium."
         />
 
         <div className="journey-track">

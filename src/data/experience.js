@@ -2,11 +2,11 @@ export const experience = [
   {
     company: 'Digital Hub',
     role: 'Full Stack Web Developer',
-    period: 'June 2026 – Present',
+    period: 'June 2026 – September 2026',
     description:
       'Developing full-stack web applications using JavaScript, React, MERN, and Next.js through hands-on development and project-based training.',
     accent: '#E76F51',
-    current: true,
+    current: false,
   },
   {
     company: 'Stories',

@@ -1,4 +1,11 @@
 export const journey = [
+  
+  {
+    date: 'September 2026',
+    title: 'Master’s in Computer Science — UCLouvain',
+    description: 'Started my Master’s degree in Computer Science at Université catholique de Louvain (UCLouvain) in Belgium.',
+    badge: 'Belgium',
+  },
   {
     date: 'June 2026',
     title: 'Full Stack Web Developer Intern — Digital Hub',

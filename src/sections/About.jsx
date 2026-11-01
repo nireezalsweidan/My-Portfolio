@@ -26,12 +26,11 @@ export default function About() {
           <div className="about-copy">
             <Reveal>
               <p className="about-lead">
-                <span className="about-dropcap">I</span>'m Nireez Al Sweidan, a Computer Science graduate from
-                LAU with hands-on experience across full stack web development, software engineering, and AI.
-                Through internships at <span className="lead-em">IDS</span>, <span className="lead-em">Ciatek</span>,{' '}
-                <span className="lead-em">Stories</span>, and <span className="lead-em">Digital Hub</span>, I've built
-                a strong foundation in writing clean code, solving real-world problems, and adapting quickly to new
-                tools and technologies.
+                <span className="about-dropcap">I</span>'m Nireez Al Sweidan, and I'm currently pursuing a Master's in Computer Science at Université catholique de
+                Louvain (UCLouvain) in Belgium. I bring hands-on experience across full stack web development,
+                software engineering, and AI through internships at <span className="lead-em">IDS</span>,{' '}
+                <span className="lead-em">Ciatek</span>, <span className="lead-em">Stories</span>, and{' '}
+                <span className="lead-em">Digital Hub</span>.
               </p>
             </Reveal>
 
@@ -73,7 +72,7 @@ export default function About() {
                 <div className="about-card-title">
                   <span className="about-card-kicker">field notes</span>
                   <h3 className="about-card-name">Nireez Al Sweidan</h3>
-                  <p>Full Stack Web Developer · LAU CS Graduate</p>
+                  <p>Full Stack Web Developer · LAU CS Graduate · UCLouvain MSc Student</p>
                 </div>
                 <CurlArrow className="about-card-arrow" />
               </div>
@@ -81,9 +80,9 @@ export default function About() {
               <ul className="about-facts">
                 <Fact label="Basis" value="Tripoli, Lebanon" />
                 <Fact label="Degree" value="B.S. Computer Science" />
-                <Fact label="Scholarship" value="USAID Scholar" />
+                <Fact label="Current Study" value="M.Sc. Computer Science @ UCLouvain" />
+                <Fact label="Location" value="Belgium" />
                 <Fact label="Focus" value="Full Stack · AI" />
-                <Fact label="Motto" value="Build clean, ship reliable" />
               </ul>
 
               <div className="about-card-note" aria-hidden="true">
